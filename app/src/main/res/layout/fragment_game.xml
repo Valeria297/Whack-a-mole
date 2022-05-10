@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_game"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#7abb3c"
+    tools:context=".fragments.GameFragment">
+
+    <!--Start of Top Bar with Hearts and Time-->
+    <RelativeLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--Health hearts-->
+        <ImageView
+            android:id="@+id/imageHeart1"
+            android:layout_width="78dp"
+            android:layout_height="78dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:src="@mipmap/red_heart_launcher_foreground" />
+
+        <ImageView
+            android:id="@+id/imageHeart2"
+            android:layout_width="78dp"
+            android:layout_height="78dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@+id/imageHeart1"
+            android:src="@mipmap/red_heart_launcher_foreground" />
+
+        <ImageView
+            android:id="@+id/imageHeart3"
+            android:layout_width="78dp"
+            android:layout_height="78dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@+id/imageHeart2"
+            android:src="@mipmap/red_heart_launcher_foreground" />
+
+        <ImageView
+            android:id="@+id/imageHeart4"
+            android:layout_width="78dp"
+            android:layout_height="78dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@+id/imageHeart3"
+            android:src="@mipmap/red_heart_launcher_foreground" />
+
+        <ImageView
+            android:id="@+id/imageHeart5"
+            android:layout_width="78dp"
+            android:layout_height="78dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@+id/imageHeart4"
+            android:src="@mipmap/red_heart_launcher_foreground" />
+    </RelativeLayout>
+
+    <!--Time label and value-->
+    <TextView
+        android:id="@+id/textTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="135dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginBottom="5dp"
+        android:text="@string/time"
+        android:textSize="19pt" />
+
+    <!--Row 1-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:weightSum="3">
+
+        <ImageView
+            android:id="@+id/imageMole1"
+            android:layout_width="105dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="200dp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:onClick="onClick"
+            android:src="@mipmap/wole_game_launcher_foreground" />
+
+        <ImageView
+            android:id="@+id/imageMole2"
+            android:layout_width="105dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="200dp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:onClick="onClick"
+            android:src="@mipmap/wole_game_launcher_foreground" />
+
+        <ImageView
+            android:id="@+id/imageMole3"
+            android:layout_width="105dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="200dp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:onClick="onClick"
+            android:src="@mipmap/wole_game_launcher_foreground" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/row1"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="250dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:weightSum="3">
+
+            <ImageView
+                android:id="@+id/imageHole1"
+                android:layout_width="105dp"
+                android:layout_height="80dp"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:src="@mipmap/hole_launcher_foreground" />
+
+            <ImageView
+                android:id="@+id/imageHole2"
+                android:layout_width="105dp"
+                android:layout_height="80dp"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:src="@mipmap/hole_launcher_foreground" />
+
+            <ImageView
+                android:id="@+id/imageHole3"
+                android:layout_width="105dp"
+                android:layout_height="80dp"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:src="@mipmap/hole_launcher_foreground" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!--Row 2-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:weightSum="3">
+
+        <ImageView
+            android:id="@+id/imageMole4"
+            android:layout_width="105dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="300dp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:onClick="onClick"
+            android:src="@mipmap/wole_game_launcher_foreground" />
+
+        <ImageView
+            android:id="@+id/imageMole5"
+            android:layout_width="105dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="300dp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:onClick="onClick"
+            android:src="@mipmap/wole_game_launcher_foreground" />
+
+        <ImageView
+            android:id="@+id/imageMole6"
+            android:layout_width="105dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="300dp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:onClick="onClick"
+            android:src="@mipmap/wole_game_launcher_foreground" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/row2"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="350dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:weightSum="3">
+
+            <ImageView
+                android:id="@+id/imageHole4"
+                android:layout_width="105dp"
+                android:layout_height="80dp"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:src="@mipmap/hole_launcher_foreground" />
+
+            <ImageView
+                android:id="@+id/imageHole5"
+                android:layout_width="105dp"
+                android:layout_height="80dp"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:src="@mipmap/hole_launcher_foreground" />
+
+            <ImageView
+                android:id="@+id/imageHole6"
+                android:layout_width="105dp"
+                android:layout_height="80dp"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:src="@mipmap/hole_launcher_foreground" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!--Row 3-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:weightSum="3">
+
+        <ImageView
+            android:id="@+id/imageMole7"
+            android:layout_width="105dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="400dp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:onClick="onClick"
+            android:src="@mipmap/wole_game_launcher_foreground" />
+
+        <ImageView
+            android:id="@+id/imageMole8"
+            android:layout_width="105dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="400dp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:onClick="onClick"
+            android:src="@mipmap/wole_game_launcher_foreground" />
+
+        <ImageView
+            android:id="@+id/imageMole9"
+            android:layout_width="105dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="400dp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:onClick="onClick"
+            android:src="@mipmap/wole_game_launcher_foreground" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/row3"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="450dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:weightSum="3">
+
+            <ImageView
+                android:id="@+id/imageHole7"
+                android:layout_width="105dp"
+                android:layout_height="80dp"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:src="@mipmap/hole_launcher_foreground" />
+
+            <ImageView
+                android:id="@+id/imageHole8"
+                android:layout_width="105dp"
+                android:layout_height="80dp"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:src="@mipmap/hole_launcher_foreground" />
+
+            <ImageView
+                android:id="@+id/imageHole9"
+                android:layout_width="105dp"
+                android:layout_height="80dp"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:src="@mipmap/hole_launcher_foreground" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/button_menu"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="600dp"
+        android:text="@string/menu"
+        app:cornerRadius="60sp" />
+</RelativeLayout>

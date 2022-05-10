@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/fragment_start">
+
+    <fragment
+        android:id="@+id/fragment_start"
+        android:name="com.example.whackawole.fragments.StartFragment"
+        android:label="fragment_start"
+        tools:layout="@layout/fragment_start">
+        <action
+            android:id="@+id/action_fragment_start_to_fragment_game"
+            app:destination="@id/fragment_game" />
+    </fragment>
+
+    <fragment
+        android:id="@id/fragment_game"
+        android:name="com.example.whackawole.fragments.GameFragment"
+        android:label="fragment_game"
+        tools:layout="@layout/fragment_game">
+        <action
+            android:id="@+id/action_fragment_game_to_fragment_result"
+            app:destination="@id/fragment_result" />
+        <action
+            android:id="@+id/action_fragment_game_to_fragment_start"
+            app:destination="@id/fragment_start" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_result"
+        android:name="com.example.whackawole.fragments.ResultFragment"
+        android:label="fragment_result"
+        tools:layout="@layout/fragment_result">
+        <action
+            android:id="@+id/action_fragment_result_to_fragment_start"
+            app:destination="@id/fragment_start" />
+        <action
+            android:id="@+id/action_fragment_result_to_fragment_game"
+            app:destination="@id/fragment_game" />
+    </fragment>
+</navigation>

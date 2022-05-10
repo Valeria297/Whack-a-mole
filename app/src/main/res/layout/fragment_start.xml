@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_start"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#30A635"
+    tools:context=".fragments.StartFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:weightSum="3">
+
+        <ImageView
+            android:id="@+id/start_mole"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_weight="1.6"
+            android:src="@mipmap/wole2_start_launcher_foreground" />
+
+        <TextView
+            android:id="@+id/text_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="casual"
+            android:text="@string/whack_a_wole"
+            android:textColor="#773723"
+            android:textSize="21pt" />
+
+        <TextView
+            android:id="@+id/rules"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="casual"
+            android:text="@string/catch_me_if_you_can"
+            android:textSize="13pt" />
+
+        <TextView
+            android:id="@+id/score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="casual"
+            android:text="@string/your_high_score"
+            android:textSize="12pt" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/button_start"
+                android:layout_width="150dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/start"
+                app:cornerRadius="60sp" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
