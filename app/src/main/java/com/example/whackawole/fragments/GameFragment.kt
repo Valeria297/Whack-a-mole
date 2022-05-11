@@ -22,8 +22,6 @@ class GameFragment : Fragment() {
     private var _binding: FragmentGameBinding? = null
     private val binding get() = requireNotNull(_binding)
 
-    var score = ScoreHolder().score
-    var highScore = ScoreHolder().highScore
     var moleArray = ArrayList<ImageView>()
     var handler = Handler(Looper.getMainLooper())
     var runnable = Runnable { }
@@ -56,6 +54,7 @@ class GameFragment : Fragment() {
             moleArray.add(imageMole9)
 
             invisibleMole()
+            moleListener()
 
             //Timer
             object : CountDownTimer(30000, 1000) {
@@ -77,13 +76,15 @@ class GameFragment : Fragment() {
 
             }.start()
 
+            ScoreHolder.updateHighScore(ScoreHolder.score)
+
             buttonMenu.setOnClickListener {
                 findNavController().navigate(R.id.action_fragment_game_to_fragment_start)
             }
         }
     }
 
-    fun invisibleMole() {
+    private fun invisibleMole() {
         runnable = Runnable {
             for (image in moleArray) {
                 image.visibility = View.INVISIBLE
@@ -99,31 +100,43 @@ class GameFragment : Fragment() {
         handler.post(runnable)
     }
 
-    fun onClick(v: View) {
-        with(binding) {
-            when (v.id) {
-                R.id.imageMole1 -> animateHit(0)
-                R.id.imageMole2 -> animateHit(1)
-                R.id.imageMole3 -> animateHit(2)
-                R.id.imageMole4 -> animateHit(3)
-                R.id.imageMole5 -> animateHit(4)
-                R.id.imageMole6 -> animateHit(5)
-                R.id.imageMole7 -> animateHit(6)
-                R.id.imageMole8 -> animateHit(7)
-                R.id.imageMole9 -> animateHit(8)
-            }
+    private fun moleListener() {
+        with (binding) {
+            imageMole1.setOnClickListener { onClick(it) }
+            imageMole2.setOnClickListener { onClick(it) }
+            imageMole3.setOnClickListener { onClick(it) }
+            imageMole4.setOnClickListener { onClick(it) }
+            imageMole5.setOnClickListener { onClick(it) }
+            imageMole6.setOnClickListener { onClick(it) }
+            imageMole7.setOnClickListener { onClick(it) }
+            imageMole8.setOnClickListener { onClick(it) }
+            imageMole9.setOnClickListener { onClick(it) }
         }
     }
 
-    fun animateHit(p: Int) {
-        if (moleArray[p].getTranslationY() < 0) {
-            moleArray[p].animate().translationY(0.0f).setDuration(20);
-            incrementScore();
+    private fun onClick(v: View) {
+        when (v.id) {
+            R.id.imageMole1 -> animateHit(0)
+            R.id.imageMole2 -> animateHit(1)
+            R.id.imageMole3 -> animateHit(2)
+            R.id.imageMole4 -> animateHit(3)
+            R.id.imageMole5 -> animateHit(4)
+            R.id.imageMole6 -> animateHit(5)
+            R.id.imageMole7 -> animateHit(6)
+            R.id.imageMole8 -> animateHit(7)
+            R.id.imageMole9 -> animateHit(8)
         }
     }
 
-    fun incrementScore() {
-        ScoreHolder().score += 1
+    private fun animateHit(p: Int) {
+        incrementScore()
+        if (moleArray[p].translationY < 0) {
+            moleArray[p].animate().translationY(0.0f).duration = 20
+        }
+    }
+
+    private fun incrementScore() {
+        ScoreHolder.score += 1
     }
 
     override fun onDestroyView() {

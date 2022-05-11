@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import com.example.whackawole.R
 import com.example.whackawole.databinding.FragmentStartBinding
@@ -33,8 +34,8 @@ class StartFragment : Fragment() {
 
         with(binding) {
 
-            var scoreRecord = ScoreHolder().highScore
-            score.text = "Your record: " + ScoreHolder().updateHighScore(scoreRecord).toString()
+            var scoreRecord = ScoreHolder.highScore
+            score.text = "Your record: " + ScoreHolder.updateHighScore(scoreRecord).toString()
 
             buttonStart.setOnClickListener {
                 findNavController().navigate(R.id.action_fragment_start_to_fragment_game)

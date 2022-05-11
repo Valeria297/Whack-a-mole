@@ -31,12 +31,8 @@ class ResultFragment : Fragment() {
 
         with(binding) {
 
-            score.text = ScoreHolder().score.toString()
-
-            var scoreRecord = ScoreHolder().highScore
-            record.text = ScoreHolder()
-                .updateHighScore(scoreRecord)
-                .toString()
+            score.text = "Your score: " + ScoreHolder.score.toString()
+            record.text = "High score: " + ScoreHolder.highScore.toString()
 
             buttonMenu.setOnClickListener {
                 findNavController().navigate(R.id.action_fragment_result_to_fragment_start)
